@@ -1,5 +1,5 @@
 # Instalación y ejecución
-Para ejecutar el Notebook se requiere Spark 2.4.0 y las siguientes librerías de Python
+Para ejecutar el Notebook se requiere Spark 2.4.0 y las siguientes librerías de Python:
 * gensim
 * matplotlib
 * sklearn
@@ -13,7 +13,7 @@ Descargar el dataset https://www.kaggle.com/snapcrack/all-the-news y procesarlo 
 Con el crecimiento de la cantidad de contenido disponible la búsqueda de contenido es una necesidad de importancia en el mundo real. Para el caso de  las noticias se propone crear buscadores que funcionen a partir de palabras clave y similaridad semántica.
 
 ## Comprensión de los datos
-El dataset comprende tres archivos CVS, compuestos por diversos artículos de diferentes periódicos y websites entre 2015 y 2016. Para cada artículo se tienen id,  titulo, contenido, autor, url y fecha de publicación. Se identifica la existencia de filas nulas y algunos contenidos que empiezan y terminan por fin de línea.
+El dataset comprende tres archivos CSV, compuestos por diversos artículos de diferentes periódicos y websites entre 2015 y 2016. Para cada artículo se tienen id,  titulo, contenido, autor, url y fecha de publicación. Se identifica la existencia de filas nulas y algunos contenidos que empiezan y terminan por fin de línea.
 
 Las siguientes gráficas dan una idea de algunos de estos campos:
 
@@ -45,8 +45,7 @@ Los datos se adaptan la estructura de búsqueda índice inverso, que asocia una 
 Se muestrean artículos aleatorios y se verifica manualmente que la similaridad coseno entre sus vectores se corresponda con cuán similar es la temática de los artículos. 
 ### Elegir número de clusters para el algoritmo K-means
 Se ejecutó k-means, variando el parámetro k entre 2 y 40 con paso 2. La siguiente gráfica muestra el valor de la función de costo de k-means en función del número de clusters con que se entrenaba. Finalmente, se escogió usar 20 clusters.
-
-[img:images/kmeans.png]
+![kmeans](/images/kmeans.png?raw=true "kmeans")
 
 ### Análisis de las 20 palabras más distintivas de cada cluster.
 Para que estas palabras fueran realmente representativas del cluster se descartan las que tienen menos de 1.500 o más de 200.000 ocurrencias en todos los artículos. La intuición detrás de esto es que las palabras con menos ocurrencias no representaban el significado del cluster y las que tenían más, por aparecer en múltiples clusters, no son distintivas. 
@@ -81,10 +80,9 @@ A continuación las 20 palabras más representativas de cada cluster:
 
 ### Imagenes de los clusters generados
 #### Con Principal Component Analysis
-
-[img:images/pca.png]
+![pca](/images/pca.png?raw=true "pca")
 
 #### Con t-Distributed Stochastic Neighbor Embedding 
+![tsne](/images/tsne.png?raw=true "tsne")
 
-[img:images/tsne.png]
 
