@@ -46,23 +46,45 @@ Se muestrean artículos aleatorios y se verifica manualmente que la similaridad 
 ### Elegir número de clusters para el algoritmo K-means
 Se ejecutó k-means, variando el parámetro k entre 2 y 40 con paso 2. La siguiente gráfica muestra el valor de la función de costo de k-means en función del número de clusters con que se entrenaba. Finalmente, se escogió usar 20 clusters.
 
-[img:images/elbownotelbow.png]
+[img:images/kmeans.png]
 
-### Análisis de las 20 palabras que más ocurren en cada cluster.
-Para que estas palabras fueran realmente representativas del cluster se realizan las siguientes operaciones:
-* Eliminar las palabras con menos de 1.500 o más de 200.000 ocurrencias en todos los artículos. La intuición detrás de esto es que las palabras con menos ocurrencias no representaban el significado del cluster y las que tenían más, por aparecer en múltiples clusters, no lo identificaban. 
+### Análisis de las 20 palabras más distintivas de cada cluster.
+Para que estas palabras fueran realmente representativas del cluster se descartan las que tienen menos de 1.500 o más de 200.000 ocurrencias en todos los artículos. La intuición detrás de esto es que las palabras con menos ocurrencias no representaban el significado del cluster y las que tenían más, por aparecer en múltiples clusters, no son distintivas. 
 
 Tanto 1.500 como 200.000 son parámetros ajustados experimentalmente. 
 
 A continuación las 20 palabras más representativas de cada cluster: 
 
-[img:images/palabras_clusters.png]
+| Cluster |                                                                                                  Most Distinctive Words                                                                                                 |
+|:-------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|    0    | ["schools","transgender","campus","scalia","abortion","gorsuch","faculty","teachers","justices","devos","colleges","antonin","legislature","students","abortions","charter","bathrooms","clinics","school’s","court’s"] |
+|    1    |         ["outbreak","fda","zika","virus","symptoms","patients","genetic","mosquitoes","infected","disease","clinical","mosquito","treatments","autism","vaccine","cdc","diet","bacteria","diseases","infection"]        |
+|    2    |            ["roosevelt","nafta","mexicans","vox","conservatism","gingrich","nixon","romney","elites","coal","populist","pruitt","populism","tpp","reagan","inaugural","reader","mitt","bannon","nationalism"]           |
+|    3    |         ["france’s","pen","cent","theresa","brexit","netherlands","merkel","european","britain’s","chancellor","bloc","parliament","eu","britain","labour","macron","cameron","referendum","le","parliamentary"]        |
+|    4    |           ["missile","iran","tillerson","korea","putin’s","ballistic","xi","nuclear","sanctions","iran’s","korean","ukraine","taiwan","nato","missiles","pyongyang","jong","netanyahu","korea’s","peninsula"]           |
+|    5    |               ["scored","coach","yankees","championship","tournament","ball","nfl","players","knicks","nba","giants","league","player","jets","curry","yards","quarterback","warriors","mets","patriots"]               |
+|    6    |                      ["songs","music","album","lyrics","comedy","episodes","pop","show’s","movie","film","episode","jazz","comic","movies","musical","band","films","song","characters","broadway"]                     |
+|    7    |            ["realdonaldtrump","kaine","lewandowski","debates","melania","gingrich","conway","msnbc","biden","hannity","pac","carson","palin","pence","jeb","sexist","weiner","hillary’s","kellyanne","mate"]            |
+|    8    |              ["apple","uber","apps","apple’s","iphone","yahoo","motors","startup","tesla","acquisition","merger","musk","inc","software","microsoft","samsung","smartphone","antitrust","android","google"]             |
+|    9    |                ["stocks","economists","crude","inflation","wells","fed","monetary","index","stimulus","exports","dow","bonds","mnuchin","imports","dollar","reserve","nasdaq","securities","fargo","s&p"]               |
+|    10   |             ["bail","shooter","jurors","felony","patrol","cop","inmates","sheriff’s","officer","police","custody","shooting","firearm","sheriff","cops","hernandez","nypd","shootings","officers","fatally"]            |
+|    11   |                ["solar","species","hurricane","birds","storm","weather","arctic","warming","mars","fish","moon","ocean","winds","nasa","scientists","snow","planet","temperatures","temperature","earth"]               |
+|    12   |        ["cartel","brussels","belgian","manchester","airport","rio","attackers","swedish","turkey’s","migrant","migrants","turkish","sweden","coup","duterte","istanbul","detained","erdogan","asylum","attacker"]       |
+|    13   |                 ["comey","nsa","hacking","server","schiff","fbi","abedin","cia","comey’s","collusion","fbi’s","leaks","mueller","flynn’s","nunes","flynn","yates","kislyak","intelligence","classified"]                |
+|    14   |           ["airstrikes","civilians","iraqi","casualties","afghan","rebel","mosul","aleppo","taliban","rebels","assad","fighters","raqqa","baghdad","syrian","bashar","sunni","militants","syria’s","kurdish"]           |
+|    15   |     ["repealing","aca","obamacare","caucuses","margin","repeal","insurers","delegate","sanders’s","medicaid","kasich","filibuster","caucus","medicare","ryan’s","gop’s","delegates","turnout","premiums","contests"]    |
+|    16   |         ["firearms","dakota","mateen","demonstrators","guns","deportation","dhs","policing","ferguson","gun","rouge","shootings","nypd","sanctuary","orlando","tribe","protesters","baton","refuge","pipeline"]         |
+|    17   |          ["o’reilly","cosby","boycott","espn","milo","actress","gawker","trans","academy","harassment","feminist","ailes","awards","celebrities","yiannopoulos","oscar","sexist","instagram","anthem","makeup"]         |
+|    18   |              ["cream","restaurant","designer","fashion","art","painting","chicken","design","taste","listing","wedding","beer","restaurants","museum","cooking","wine","cheese","kitchen","coffee","meal"]              |
+|    19   |          ["israeli","islam","jesus","holy","egypt","palestinian","palestinians","francis","pope","jerusalem","christians","israel’s","jews","cuban","cuba","catholic","castro","jewish","holocaust","egyptian"]         
+
 
 ### Imagenes de los clusters generados
-## Con Principal Component Analysis
+#### Con Principal Component Analysis
 
 [img:images/pca.png]
 
-## Con t-Distributed Stochastic Neighbor Embedding 
+#### Con t-Distributed Stochastic Neighbor Embedding 
 
-[img:images/t_sne.png]
+[img:images/tsne.png]
+
