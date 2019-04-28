@@ -22,7 +22,7 @@ Las siguientes gráficas dan una idea de algunos de estos campos:
 Para nuestro objetivo solo se hacen necesarias las columnas título, contenido y fecha.  Se realizan las siguientes operaciones:
 
 ### Preprocesado con Script en Pandas:
-* Unificar los tres CVS en uno 
+* Unificar los tres CSV en uno 
 * Eliminar los fin de línea que aparecían al comienzo del contenido de algunos artículos 
 * Tomar solo las 3 columnas relevantes para nuestro trabajo: Id, titulo, contenido y generar el dataset que se usará en spark (articles_all.csv)
 
