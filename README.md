@@ -83,6 +83,10 @@ A continuación las 20 palabras más representativas de cada cluster:
 ##### Con t-Distributed Stochastic Neighbor Embedding 
 ![tsne](/images/tsne.png?raw=true "tsne")
 
+### Despliegue
+
+El desarrollo del proyecto se realizó en Databricks.
+
 ## Integrantes y sus contribuciones
 
 ### Juan José Suárez Estrada - jsuare32@eafit.edu.co
